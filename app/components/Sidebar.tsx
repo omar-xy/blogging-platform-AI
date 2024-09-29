@@ -1,23 +1,22 @@
 'use client';
 import React, { useState } from 'react';
 import { logo, sun } from '../assets';
-import { useRouter } from 'next/compat/router';
 import Link from 'next/link';
 import { navlinks } from '../constants';
 import CreateComp from '../assets/create-campaign.svg'
 
-const Icon = ({ styles, name, imgUrl, isActive, disabled, handleClick }: any) => (
-  <div className={`w-[48px] h-[48px] rounded-[10px] ${isActive && isActive === name && 'bg-[#2c2f32]'} flex justify-center items-center ${!disabled && 'cursor-pointer'} ${styles}`} onClick={handleClick}>
+const Icon = ({ path, styles, name, imgUrl, isActive, disabled, handleClick }: any) => (
+  <Link href={path || '/'} className={`w-[48px] h-[48px] rounded-[10px] ${isActive && isActive === name && 'bg-[#2c2f32]'} flex justify-center items-center ${!disabled && 'cursor-pointer'} ${styles}`} onClick={handleClick}>
     {!isActive ? (
       <img src={imgUrl.src} alt="fund_logo" className="w-1/2 h-1/2" />
     ) : (
       <img src={imgUrl.src} alt="fund_logo" className={`w-1/2 h-1/2 ${isActive !== name && 'grayscale'}`} />
     )}
-  </div>
+  </Link>
 )
 
+
 const Sidebar = () => {
-  const router = useRouter();
   const [isActive, setIsActive] = useState('dashboard');
 
   return (
@@ -33,11 +32,12 @@ const Sidebar = () => {
               key={link.name}
               {...link}
               isActive={isActive}
+              path={link.link}
               imageUrl={link.imageUrl}
               handleClick={() => {
                 if(!link.disabled) {
                   setIsActive(link.name);
-                  router?.push(link.link);
+                  console.log(link.link);
                 }
               }}
             />

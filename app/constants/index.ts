@@ -27,14 +27,14 @@ export const navlinks = [
   {
     name: 'payment',
     imgUrl: payment,
-    link: '/',
-    disabled: true,
+    link: '/make-payment',
+    disabled: false,
   },
   {
     name: 'withdraw',
     imgUrl: withdraw,
-    link: '/',
-    disabled: true,
+    link: '/withdraw',
+    disabled: false,
   },
   {
     name: 'profile',
@@ -44,7 +44,7 @@ export const navlinks = [
   {
     name: 'logout',
     imgUrl: logout,
-    link: '/',
-    disabled: true,
+    link: '/logout',
+    disabled: false,
   },
 ];
