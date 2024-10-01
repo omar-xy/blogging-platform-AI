@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* global.css */
+
+/* Import custom fonts */
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&display=swap');
 
 :root {
   --background: #ffffff;
@@ -25,3 +29,24 @@ body {
     text-wrap: balance;
   }
 }
+
+
+
+/* Apply global font family */
+* {
+  font-family: 'Epilogue', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Custom card hover effect (if not using Tailwind) */
+.card-container {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-container:hover {
+  transform: scale(1.05);
+}
+
+/* Any other custom global styles */

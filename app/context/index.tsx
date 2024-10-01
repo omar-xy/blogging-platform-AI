@@ -19,6 +19,8 @@ export const StateContextProvider = ({ children } : any) => {
       target: '',
       deadline: '',
       amountCollected: '',
+      timeposted: '',
+      likes: '',
       image: '',
       pId: 0
     }

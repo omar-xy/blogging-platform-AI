@@ -6,7 +6,7 @@ import FundCard from './FundCard';
 import { loader } from '../assets';
 import { useRouter } from 'next/compat/router';
 
-const DisplayCampaigns = ({ title, isLoading, campaigns } : any) => {
+const DisplayCampaigns = ({ title, isLoading, campaigns, timeposted } : any) => {
   const router = useRouter();
   const handleNavigate = (campaign : any) => {
     router?.push(`/campaign-details/${campaign.title}`)
@@ -29,6 +29,8 @@ const DisplayCampaigns = ({ title, isLoading, campaigns } : any) => {
 
         {!isLoading && campaigns.length > 0 && campaigns.map((campaign: any) => <FundCard 
           key={campaign.pId}
+          timePosted={timeposted}
+          likesNum={timeposted}
           {...campaign}
           handleClick={() => handleNavigate(campaign)}
         />)}
