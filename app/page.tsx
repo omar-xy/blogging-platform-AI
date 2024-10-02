@@ -9,7 +9,7 @@ export default function Home() {
     {
       owner: "0x123456789",
       title: "Blog 1",
-      description: "This is a description of Blog 1",
+      description: "Quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte",
       target: "1000",
       deadline: "2022-12-12",
       timePosted: "2h ago",
@@ -21,7 +21,7 @@ export default function Home() {
     {
       owner: "0x123456789",
       title: "Blog 2",
-      description: "This is a description of Blog 2",
+      description: "Quand un imprimeur anonyme",
       target: "2000",
       deadline: "2022-12-12",
       timePosted: "12min ago",
@@ -33,7 +33,7 @@ export default function Home() {
     {
       owner: "0x123456789",
       title: "Blog 3",
-      description: "This is a description of Blog 3",
+      description: "Quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte ...more 3",
       target: "3000",
       deadline: "2022-12-12",
       timePosted: "3days ago",
@@ -45,7 +45,7 @@ export default function Home() {
     {
       owner: "0x123456789",
       title: "Blog 4",
-      description: "This is a description of Blog 4",
+      description: "Quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte ...more 4",
       target: "4000",
       deadline: "2022-12-12",
       timePosted: "3days ago",
@@ -57,7 +57,7 @@ export default function Home() {
     {
       owner: "0x123456789",
       title: "Blog 5",
-      description: "This is a description of Blog 5",
+      description: "Quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte jajajajjajajajajjaajajjajajajaj aaj uhqhs q sq oiq oqhioqiqi 5",
       target: "5000",
       deadline: "2022-12-12",
       timePosted: "5days ago",

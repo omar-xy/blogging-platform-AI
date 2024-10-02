@@ -1,3 +1,21 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": [
+    "next/core-web-vitals", "next/typescript",
+    "eslint:recommended",
+    "plugin:tailwindcss/recommended"
+  ],
+  "plugins": ["tailwindcss"],
+  "rules": {
+    "tailwindcss/no-custom-classname": "off",  // Optional: turn off if using custom classes
+    "tailwindcss/classnames-order": "warn"     // Optional: enforce class order
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],  // If using TypeScript with Next.js
+      "extends": ["plugin:@typescript-eslint/recommended"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+      }
+    }
+  ]
 }

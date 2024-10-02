@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      borderRadius: {
+        'custom': '15px', // Replace with your desired custom radius
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
