@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { TagIcon, HeartIcon, ClockIcon } from '@heroicons/react/solid';
-import { thirdweb } from '../assets'; // Ensure this path is correct
+import Wo from '../assets/Wo.svg'; // Ensure this path is correct
+import text from '../assets/text.svg'; // Ensure this path is correct
 
 const FundCard = ({ owner, title, description, handleClick, timePosted, likes } : any) => {
   // Truncate the description if it's too long
@@ -45,7 +46,7 @@ const FundCard = ({ owner, title, description, handleClick, timePosted, likes } 
           {/* User Info */}
           <div className="flex items-center">
             <div className="w-[30px] h-[30px] rounded-full bg-[#13131a] flex items-center justify-center">
-              <img src={thirdweb.src} alt="user" className="w-1/2 h-1/2 object-contain" />
+              <img src={Wo.src} alt="user" className="w-[35xp] h-[35px] flex" />
             </div>
             <p className="ml-2 text-[#808191] text-[12px] truncate">
               by <span className="text-[#b2b3bd]">{owner}</span>
