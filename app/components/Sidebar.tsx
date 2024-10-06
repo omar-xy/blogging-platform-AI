@@ -1,9 +1,11 @@
 'use client';
 import React, { useState } from 'react';
-import { logo, sun } from '../assets';
+import { logo, logout } from '../assets';
 import Link from 'next/link';
 import { navlinks } from '../constants';
+import LogoutIcon from './Logout';
 import CreateComp from '../assets/create-campaign.svg'
+import { link } from 'fs';
 
 const Icon = ({ path, styles, name, imgUrl, isActive, disabled, handleClick }: any) => (
   <Link href={path || '/'} className={`w-[48px] h-[48px] rounded-[10px] ${isActive && isActive === name && 'bg-[#1B2030]'} flex justify-center items-center ${!disabled && 'cursor-pointer'} ${styles}`} onClick={handleClick}>
@@ -40,8 +42,7 @@ const Sidebar = () => {
             />
           ))}
         </div>
-
-        <Icon styles="bg-[#1B2030] shadow-secondary" imgUrl={sun} />
+        {/* <LogoutIcon isActive={isActive} setIsActive={setIsActive} /> */}
       </div>
     </div>
   )

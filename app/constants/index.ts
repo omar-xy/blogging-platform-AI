@@ -1,10 +1,10 @@
 import createCampaign from '../assets/create-campaign.svg';
 import dashboard from '../assets/dashboard.svg';
 import logo from '../assets/logo.svg';
-import logout from '../assets/logout.svg';
+import Vector from '../assets/Vector.svg';
 import payment from '../assets/payment.svg';
 import profile from '../assets/profile.svg';
-import sun from '../assets/sun.svg';
+import logout from '../assets/logout.svg';
 import withdraw from '../assets/withdraw.svg';
 import tagType from '../assets/type.svg';
 import search from '../assets/search.svg';
@@ -36,6 +36,12 @@ export const navlinks = [
     link: '/withdraw',
     disabled: false,
   },
+    {
+      name: 'settings',
+      imgUrl: Vector,
+      link: '/settings',
+      disabled: false,
+    },
   {
     name: 'profile',
     imgUrl: profile,
@@ -45,6 +51,5 @@ export const navlinks = [
     name: 'logout',
     imgUrl: logout,
     link: '/logout',
-    disabled: false,
   },
 ];
