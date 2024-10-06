@@ -20,12 +20,12 @@ const Sidebar = () => {
   const [isActive, setIsActive] = useState('dashboard');
 
   return (
-    <div className="flex justify-between items-center flex-col sticky top-5 h-[93vh]">
+    <div className="flex justify-between items-center flex-col sticky top-5 h-[100vh]">
         <Icon styles="w-[76px] h-[76px] bg-[#1B2030] rounded-custom" imgUrl={logo} />
       <div className="flex-1 flex flex-col justify-between items-center bg-[#1B2030] rounded-custom w-[76px] py-4 mt-12">
         <div className="flex flex-col justify-center items-center gap-3">
           {navlinks.map((link : any) => (
-            <Icon 
+            <Icon
               key={link.name}
               {...link}
               isActive={isActive}

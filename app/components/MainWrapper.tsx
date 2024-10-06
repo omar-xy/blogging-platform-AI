@@ -7,7 +7,7 @@ export default function MainWrapper({ children } : { children: any }) {
       <Sidebar />
     </div>
 
-    <div className="flex-1 max-sm:w-full max-w-[1280px] mx-auto sm:pr-5">
+    <div className="flex-1 max-sm:w-full max-w-[1517px] mx-auto sm:pr-5">
       <Navbar />
       {children}
     </div>
