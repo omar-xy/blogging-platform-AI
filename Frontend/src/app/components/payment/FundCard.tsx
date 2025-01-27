@@ -2,8 +2,7 @@
 
 import React from 'react';
 import { TagIcon, HeartIcon, ClockIcon } from '@heroicons/react/solid';
-import Wo from '../assets/Wo.svg'; // Ensure this path is correct
-import text from '../assets/text.svg'; // Ensure this path is correct
+import{ Wo } from '../../../assets'; // Ensure this path is correct
 
 const FundCard = ({ owner, title, description, handleClick, timePosted, likes } : any) => {
   // Truncate the description if it's too long
@@ -65,5 +64,3 @@ const FundCard = ({ owner, title, description, handleClick, timePosted, likes } 
 }
 
 export default FundCard;
-
-

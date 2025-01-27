@@ -1,8 +1,4 @@
-import Image from "next/image";
-import DisplayCampaigns from "./components/DisplayCampaigns";
-import { StateContext } from "./context";
-import { useContext } from "react";
-import { time } from "console";
+import DisplayCampaigns from "./components/campaign/DisplayCampaigns"
 
 export default function Home() {
   const campaigns = [
@@ -68,7 +64,7 @@ export default function Home() {
     },
   ];
   return (
-    <DisplayCampaigns 
+    <DisplayCampaigns
     title="All Blogs"
     isLoading={false}
     campaigns={campaigns}

@@ -2,8 +2,8 @@
 'use client';
 
 import React from 'react';
-import FundCard from './FundCard';
-import { loader } from '../assets';
+import FundCard from '../payment/FundCard';
+import { loader } from '../../../assets';
 import { useRouter } from 'next/compat/router';
 
 const DisplayCampaigns = ({ title, isLoading, campaigns, timeposted } : any) => {

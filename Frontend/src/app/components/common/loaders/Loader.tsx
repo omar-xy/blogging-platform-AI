@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { loader } from '../assets';
+import { loader } from '../../../../assets';
 
 const Loader = () => {
   return (

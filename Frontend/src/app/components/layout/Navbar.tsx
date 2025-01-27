@@ -1,13 +1,10 @@
 'use client';
 import React, { useContext, useState } from 'react'
-import { StateContext } from '../context';
-import { CustomButton } from './CustomButton';
-import { logo, menu, search, thirdweb } from '../assets';
-import { navlinks } from '../constants';
+import { StateContext } from '../../../lib/context';
+import { CustomButton } from '../common/buttons/CustomButton';
+import {  menu, search, robo } from '../../../assets/';
+import { navlinks } from '../../../lib/constants';
 import { useRouter } from 'next/compat/router';
-import Link from 'next/link';
-import robo from '../assets/robo.png';
-import Wo from '../assets/Wo.svg';
 import Image from 'next/image';
 const Navbar = () => {
     const router = useRouter();
@@ -35,7 +32,7 @@ const Navbar = () => {
             else connect()
           }}
         />
-{/* 
+{/*
         <Link href={'/profile'}>
           <div className="w-[52px] h-[52px] rounded-full bg-[#2c2f32] flex justify-center items-center cursor-pointer">
             <img src={robo.src} alt="user" className="w-[60%] h-[60%] object-contain" />
@@ -71,7 +68,7 @@ const Navbar = () => {
                   <Image
                     width={24}
                     height={24}
-                    src={link.imgUrl.src}
+                    src={link.imgUrl?.src || ''}
                     alt={link.name}
                     className={`w-[24px] h-[24px] object-contain ${isActive === link.name ? 'grayscale-0' : 'grayscale'}`}
                   />

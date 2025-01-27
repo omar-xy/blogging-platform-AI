@@ -1,21 +1,19 @@
 'use client';
 import React, { useState } from 'react';
-import { logo, logout } from '../assets';
+import { logo, logout } from '../../../assets';
 import Link from 'next/link';
-import { navlinks } from '../constants';
-import LogoutIcon from './Logout';
-import CreateComp from '../assets/create-campaign.svg'
-import { link } from 'fs';
+import { navlinks } from '../../../lib/constants';
 
-const Icon = ({ path, styles, name, imgUrl, isActive, disabled, handleClick }: any) => (
-  <Link href={path || '/'} className={`w-[48px] h-[48px] rounded-[10px] ${isActive && isActive === name && 'bg-[#1B2030]'} flex justify-center items-center ${!disabled && 'cursor-pointer'} ${styles}`} onClick={handleClick}>
-    {!isActive ? (
-      <img src={imgUrl.src} alt="fund_logo" className="w-1/2 h-1/2" />
-    ) : (
-      <img src={imgUrl.src} alt="fund_logo" className={`w-1/2 h-1/2 ${isActive !== name && 'grayscale'}`} />
-    )}
-  </Link>
-)
+
+    const Icon = ({ styles, path, name, imgUrl, isActive, disabled, handleClick }: any) => (
+    <Link href={path || '/'} className={`w-[48px] h-[48px] rounded-[10px] ${isActive && isActive === name && 'bg-[#1B2030]'} flex justify-center items-center ${!disabled && 'cursor-pointer'} ${styles}`} onClick={handleClick}>
+        {!isActive ? (
+        <img src={imgUrl?.src || ''}  alt="fund_logo" className="w-1/2 h-1/2" />
+        ) : (
+        <img src={imgUrl?.src || ''} alt="fund_logo" className={`w-1/2 h-1/2 ${isActive !== name && 'grayscale'}`} />
+        )}
+    </Link>
+    )
 
 
 const Sidebar = () => {

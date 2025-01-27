@@ -1,5 +1,5 @@
 import React from 'react';
-import { logout } from '../assets';
+import { logout } from '../../../assets';
 import Icon from './Sidebar'; // Adjust the import path as needed
 
 const LogoutIcon = ({ isActive, setIsActive } : any) => {
