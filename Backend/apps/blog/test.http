@@ -1,0 +1,109 @@
+@baseUrl = http://localhost:8000/api/blog
+@contentType = application/json
+@authToken = your_auth_token_here
+
+### Blog Endpoints ###
+
+# Get all blogs
+GET {{baseUrl}}/
+Content-Type: {{contentType}}
+
+# Get single blog
+GET {{baseUrl}}/1/
+Content-Type: {{contentType}}
+
+# Create new blog (requires authentication)
+POST {{baseUrl}}/
+Content-Type: {{contentType}}
+Authorization: Bearer {{authToken}}
+
+{
+    "title": "My First Blog Post",
+    "content": "This is the content of my first blog post.",
+    "summary": "A brief summary of the blog post",
+    "status": "draft",
+    "tags": [
+        {"name": "technology"},
+        {"name": "programming"}
+    ]
+}
+
+# Update blog (requires authentication)
+PUT {{baseUrl}}/1/
+Content-Type: {{contentType}}
+Authorization: Bearer {{authToken}}
+
+{
+    "title": "Updated Blog Post",
+    "content": "This is the updated content.",
+    "summary": "Updated summary",
+    "status": "published",
+    "tags": [
+        {"name": "technology"},
+        {"name": "updated"}
+    ]
+}
+
+# Delete blog (requires authentication)
+DELETE {{baseUrl}}/1/
+Content-Type: {{contentType}}
+Authorization: Bearer {{authToken}}
+
+### Tag Endpoints ###
+
+# Get all tags
+GET {{baseUrl}}/tags/
+Content-Type: {{contentType}}
+
+# Get single tag
+GET {{baseUrl}}/tags/1/
+Content-Type: {{contentType}}
+
+# Create new tag (requires authentication)
+POST {{baseUrl}}/tags/
+Content-Type: {{contentType}}
+Authorization: Bearer {{authToken}}
+
+{
+    "name": "technology"
+}
+
+# Update tag (requires authentication)
+PUT {{baseUrl}}/tags/1/
+Content-Type: {{contentType}}
+Authorization: Bearer {{authToken}}
+
+{
+    "name": "updated-technology"
+}
+
+# Delete tag (requires authentication)
+DELETE {{baseUrl}}/tags/1/
+Content-Type: {{contentType}}
+Authorization: Bearer {{authToken}}
+
+### Test Different Blog Status ###
+
+# Create draft blog
+POST {{baseUrl}}/
+Content-Type: {{contentType}}
+Authorization: Bearer {{authToken}}
+
+{
+    "title": "Draft Blog Post",
+    "content": "This is a draft post.",
+    "summary": "Draft summary",
+    "status": "draft"
+}
+
+# Create published blog
+POST {{baseUrl}}/
+Content-Type: {{contentType}}
+Authorization: Bearer {{authToken}}
+
+{
+    "title": "Published Blog Post",
+    "content": "This is a published post.",
+    "summary": "Published summary",
+    "status": "published"
+}

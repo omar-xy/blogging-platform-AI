@@ -1,0 +1,46 @@
+@baseUrl = http://localhost:8000/api/users
+@contentType = application/json
+@authToken = your_auth_token_here
+
+### Register new user
+
+POST {{baseUrl}}/register/
+Content-Type: {{contentType}}
+
+{
+    "email": "test@example.com",
+    "username": "testuser",
+    "password": "securepassword123"
+}
+
+### Login
+POST {{baseUrl}}/login/
+Content-Type: {{contentType}}
+
+{
+    "email": "test@example.com",
+    "password": "securepassword123"
+}
+
+### Get user profile (requires authentication)
+GET {{baseUrl}}/profile/
+Content-Type: {{contentType}}
+Authorization: Bearer {{authToken}}
+
+### Update user profile (requires authentication)
+PUT {{baseUrl}}/profile/
+Content-Type: {{contentType}}
+Authorization: Bearer {{authToken}}
+
+{
+    "bio": "Updated bio information",
+    "username": "updated_username"
+}
+
+### Refresh token
+POST {{baseUrl}}/token/refresh/
+Content-Type: {{contentType}}
+
+{
+    "refresh": "your_refresh_token_here"
+}
