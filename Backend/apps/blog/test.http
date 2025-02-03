@@ -1,6 +1,6 @@
 @baseUrl = http://localhost:8000/api/blog
 @contentType = application/json
-@authToken = your_auth_token_here
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4MTAwMDQyLCJpYXQiOjE3MzgwOTY0NDIsImp0aSI6IjE0NWQwNzBiMWE5MzRjNTliZjEyNDExODJjYjM2OWZmIiwidXNlcl9pZCI6Mn0.tWu6QCbBFBsHw0by0YcOnoIiePD1USYbJx908GY81K8
 
 ### Blog Endpoints ###
 

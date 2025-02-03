@@ -25,6 +25,9 @@ class BlogListCreateView(APIView):
 class BlogDetailView(APIView):
     permission_classes = [IsAuthenticatedOrReadOnly]
 
+    # Yes, there is a get_object method in the BlogDetailView class
+    # It takes a pk parameter and returns a Blog object using get_object_or_404
+    # This method is used by get(), put() and delete() methods to retrieve the blog post
     def get_object(self, pk):
         return get_object_or_404(Blog, pk=pk)
 
