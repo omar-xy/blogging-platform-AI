@@ -1,6 +1,6 @@
 @baseUrl = http://localhost:8000/api/users
 @contentType = application/json
-@authToken = your_auth_token_here
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5MjAyMTM5LCJpYXQiOjE3MzkxOTg1MzksImp0aSI6IjI3YWE1YTkyNTc5ZTRlMDFiNzA5ZDNlZmY0OTUyOTkyIiwidXNlcl9pZCI6Mn0.xiK77zM3c4avuTJmhQBCJOJHDwv-DYB-ORTbFENj3dg
 
 ### Register new user
 
@@ -33,7 +33,7 @@ Content-Type: {{contentType}}
 Authorization: Bearer {{authToken}}
 
 {
-    "bio": "Updated bio information",
+    "bio": "Updated bio information LOL",
     "username": "updated_username"
 }
 

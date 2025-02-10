@@ -20,7 +20,7 @@ class Blog(models.Model):
     content = models.TextField()
     summary = models.TextField(blank=True)
     author = models.ForeignKey(
-        settings.AUTH_USER_MODEL,  # Changed from auth.User to settings.AUTH_USER_MODEL
+        settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         related_name='blogs'
     )

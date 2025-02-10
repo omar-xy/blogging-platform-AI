@@ -11,7 +11,7 @@ class TagSerializer(serializers.ModelSerializer):
         fields = ['id', 'name']
 
 class BlogSerializer(serializers.ModelSerializer):
-    tags = TagSerializer(many=True, required=False)
+    tags = TagSerializer(many=True, required=False, read_only=True)
     author_username = serializers.CharField(source='author.username', read_only=True)
 
     # Meta class configures the serializer:
@@ -33,4 +33,23 @@ class BlogSerializer(serializers.ModelSerializer):
             'updated_at',
             'status'
         ]
-        read_only_fields = ['author', 'created_at', 'updated_at']
+        read_only_fields = ['created_at', 'updated_at', 'author']
+
+    def create(self, validated_data):
+        # Get tags from initial data
+        tags_data = self.initial_data.get('tags', [])
+        
+        # Create blog instance with current user as author
+        blog = Blog.objects.create(
+            author=self.context['request'].user,
+            **validated_data
+        )
+        
+        # Process tags
+        for tag_data in tags_data:
+            tag_name = tag_data.get('name', '').strip().lower()
+            if tag_name:
+                tag, _ = Tag.objects.get_or_create(name=tag_name)
+                blog.tags.add(tag)
+        
+        return blog

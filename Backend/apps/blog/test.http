@@ -1,19 +1,18 @@
-@baseUrl = http://localhost:8000/api/blog
+@baseUrl = http://localhost:8000/api/blog/
 @contentType = application/json
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4MTAwMDQyLCJpYXQiOjE3MzgwOTY0NDIsImp0aSI6IjE0NWQwNzBiMWE5MzRjNTliZjEyNDExODJjYjM2OWZmIiwidXNlcl9pZCI6Mn0.tWu6QCbBFBsHw0by0YcOnoIiePD1USYbJx908GY81K8
-
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5MjA1ODk0LCJpYXQiOjE3MzkyMDIyOTQsImp0aSI6ImM0ZTg4ZDBkZWZkZDQ3YmJiOGJmYmM0MDQ2ZGNmYWY4IiwidXNlcl9pZCI6Mn0.1llPMu6dAiFhmKLJXhsp5ag-rWbuM8a5sj_nhAliKrY
 ### Blog Endpoints ###
 
 # Get all blogs
-GET {{baseUrl}}/
-Content-Type: {{contentType}}
+# GET {{baseUrl}}/
+# Content-Type: {{contentType}}
 
-# Get single blog
+Get single blo
 GET {{baseUrl}}/1/
 Content-Type: {{contentType}}
 
 # Create new blog (requires authentication)
-POST {{baseUrl}}/
+POST {{baseUrl}}
 Content-Type: {{contentType}}
 Authorization: Bearer {{authToken}}
 
@@ -21,11 +20,7 @@ Authorization: Bearer {{authToken}}
     "title": "My First Blog Post",
     "content": "This is the content of my first blog post.",
     "summary": "A brief summary of the blog post",
-    "status": "draft",
-    "tags": [
-        {"name": "technology"},
-        {"name": "programming"}
-    ]
+    "status": "draft"
 }
 
 # Update blog (requires authentication)
@@ -37,15 +32,11 @@ Authorization: Bearer {{authToken}}
     "title": "Updated Blog Post",
     "content": "This is the updated content.",
     "summary": "Updated summary",
-    "status": "published",
-    "tags": [
-        {"name": "technology"},
-        {"name": "updated"}
-    ]
+    "status": "published"
 }
 
 # Delete blog (requires authentication)
-DELETE {{baseUrl}}/1/
+DELETE {{baseUrl}}1/
 Content-Type: {{contentType}}
 Authorization: Bearer {{authToken}}
 
@@ -107,3 +98,43 @@ Authorization: Bearer {{authToken}}
     "summary": "Published summary",
     "status": "published"
 }
+
+
+
+
+///////////////////////////////
+
+# Get all blogs
+curl -X GET http://localhost:8000/api/blog/ \
+-H "Content-Type: application/json"
+
+# Get single blog
+curl -X GET http://localhost:8000/api/blog/1/ \
+-H "Content-Type: application/json"
+
+# Create new blog (requires authentication)
+curl -X POST http://localhost:8000/api/blog/b/ \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5MjA1ODk0LCJpYXQiOjE3MzkyMDIyOTQsImp0aSI6ImM0ZTg4ZDBkZWZkZDQ3YmJiOGJmYmM0MDQ2ZGNmYWY4IiwidXNlcl9pZCI6Mn0.1llPMu6dAiFhmKLJXhsp5ag-rWbuM8a5sj_nhAliKrY" \
+-d '{
+    "title": "My Second Blog Post",
+    "content": "This is the content of my first blog post.",
+    "summary": "A brief summary of the blog post",
+    "status": "draft"
+}'
+
+# Update blog (requires authentication)
+curl -X PUT http://localhost:8000/api/blog/1/ \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5MjA1ODk0LCJpYXQiOjE3MzkyMDIyOTQsImp0aSI6ImM0ZTg4ZDBkZWZkZDQ3YmJiOGJmYmM0MDQ2ZGNmYWY4IiwidXNlcl9pZCI6Mn0.1llPMu6dAiFhmKLJXhsp5ag-rWbuM8a5sj_nhAliKrY" \
+-d '{
+    "title": "Updated Blog Post",
+    "content": "This is the updated content.",
+    "summary": "Updated summary",
+    "status": "published"
+}'
+
+# Delete blog (requires authentication)
+curl -X DELETE http://localhost:8000/api/blog/1/ \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM5MjA1ODk0LCJpYXQiOjE3MzkyMDIyOTQsImp0aSI6ImM0ZTg4ZDBkZWZkZDQ3YmJiOGJmYmM0MDQ2ZGNmYWY4IiwidXNlcl9pZCI6Mn0.1llPMu6dAiFhmKLJXhsp5ag-rWbuM8a5sj_nhAliKrY"
